@@ -27,7 +27,7 @@ fn main() -> ! {
         phase: spim::Phase::CaptureOnFirstTransition,
     };
     // XXX Can probably be much faster.
-    let spi_clock_rate = frequency::FREQUENCY_A::K125;
+    let spi_clock_rate = frequency::FREQUENCY_A::M8;
     let sck = board.pins.p0_17
         .into_push_pull_output(gpio::Level::Low)
         .degrade();
