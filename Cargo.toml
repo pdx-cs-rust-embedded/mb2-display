@@ -5,9 +5,12 @@ edition = "2021"
 
 [dependencies]
 cortex-m-rt = "0.7"
-microbit-v2 = "0.13.0"
+embedded-graphics = "0.8.1"
 rtt-target = "0.4"
 st7735-lcd = "0.9.0"
+
+[dependencies.microbit-v2]
+path = "/local/src/old/microbit/microbit-v2"
 
 [dependencies.panic-rtt-target]
 version = "0.1"
