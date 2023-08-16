@@ -51,7 +51,7 @@ fn main() -> ! {
         spi,
         dc,
         rst,
-        true, // rgb
+        false, // BGR, not RGB
         true, // inverted (color, not direction)
         160, // width
         80, // height
