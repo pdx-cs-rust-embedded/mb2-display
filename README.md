@@ -15,20 +15,19 @@ Adafruit
 [DragonTail](https://www.adafruit.com/product/3695). It was
 wired as follows:
 
-| Display |            |         |
-|   Pin   | Connection | MB2 Pin |
-|--------:|:----------:|:--------|
-|     Vin | 3.3V (+)   |         |
-|      3V | NC         |         |
-|     GND | Gnd (-)    |         |
-|     SCK | P13        | p0.17   |
-|    MISO | NC         |         |
-|    MOSI | P15        | p0.13   |
-|   TFTCS | Gnd (-)    |         |
-|     RST | P9         | p0.09   |
-|      DC | P8         | p0.10   |
-|    SDCS | NC         |         |
-|     LIT | NC         |         |
+| Display Pin | Connection | MB2 Pin |
+|------------:|:----------:|:--------|
+|         Vin | 3.3V (+)   |         |
+|          3V | NC         |         |
+|         GND | Gnd (-)    |         |
+|         SCK | P13        | p0.17   |
+|        MISO | NC         |         |
+|        MOSI | P15        | p0.13   |
+|       TFTCS | Gnd (-)    |         |
+|         RST | P9         | p0.09   |
+|          DC | P8         | p0.10   |
+|        SDCS | NC         |         |
+|         LIT | NC         |         |
 
 Here, "NC" is "no connection", "P" numbers refer to Dragon
 Tail pins, "p" numbers refer to internal GPIO numbering.
