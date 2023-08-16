@@ -52,7 +52,7 @@ fn main() -> ! {
         dc,
         rst,
         true, // rgb
-        true, // inverted
+        true, // inverted (color, not direction)
         160, // width
         80, // height
     );
@@ -64,12 +64,12 @@ fn main() -> ! {
 
     // Circle with styled stroke and fill with top-left point at (50, 20) with a diameter of 30
     let style = PrimitiveStyleBuilder::new()
-        .stroke_color(Rgb565::RED)
+        .stroke_color(Rgb565::BLUE)
         .stroke_width(3)
         .fill_color(Rgb565::GREEN)
         .build();
 
-    Circle::new(Point::new(80, 30), 60)
+    Circle::new(Point::new(50, 10), 60)
         .into_styled(style)
         .draw(&mut display)
         .unwrap();
