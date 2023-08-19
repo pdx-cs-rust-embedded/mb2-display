@@ -57,6 +57,21 @@ fn main() -> ! {
         80, // height
     );
 
+    #[cfg(feature = "dim")]
+    {
+        use microbit::hal::pwm;
+
+        let brightness_pin = board.pins.p1_02.into_push_pull_output(gpio::Level::High);
+        let brightness = pwm::Pwm::new(board.PWM0);
+        brightness
+            .set_output_pin(pwm::Channel::C0, brightness_pin.degrade())
+            .set_prescaler(pwm::Prescaler::Div128)
+            .set_counter_mode(pwm::CounterMode::Up)
+            .set_max_duty(1000)
+            .enable();
+        brightness.set_duty_off_common(100);
+    }
+
     display.init(&mut delay).unwrap();
     display.set_orientation(&st7735_lcd::Orientation::Landscape).unwrap();
     display.set_offset(0, 25);

@@ -27,18 +27,25 @@ wired as follows:
 |         RST | P9         | p0.09   |
 |          DC | P8         | p0.10   |
 |        SDCS | NC         |         |
-|         LIT | NC         |         |
+|         LIT | (P16)      | (p1.02) |
 
 Here, "NC" is "no connection", "P" numbers refer to Dragon
 Tail pins, "p" numbers refer to internal GPIO numbering.
+
+The LIT line may be left unconnected, in which case the
+display will run at full brightness. If LIT is connected to
+P16 and the `dim` feature is enabled when building (enabled
+by default), the display backlight will be PWMed at 10% duty
+cycle, dimming the display. Note that the brightness is
+highly non-linear: 10% duty cycle is still quite
+readable. However, the less-bright display is easier to take
+pictures or video of.
 
 Because TFTCS is hard-wired on (active low), and SDCS is not
 connected and floats off, only the display can be accessed
 in this configuration — the SD card cannot. The MISO line is
 also left unconnected; this is used only for SD card
-reads. Finally, the LIT line is not connected and floats on;
-this could be used to PWM or turn off the display backlight
-if desired.
+reads.
 
 ## Build and Run
 
